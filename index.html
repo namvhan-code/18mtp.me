@@ -71,4 +71,59 @@
         <div class="glass-card rounded-[40px] p-3 relative z-10">
             <div class="relative p-2 rounded-[36px]">
                 <svg class="absolute inset-0 w-full h-full pointer-events-none">
-                    <rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)" rx="34" fill="none
+                    <rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)" rx="34" fill="none" stroke="#FFBF86" stroke-width="2.5" stroke-dasharray="12 12" class="animate-dash" />
+                </svg>
+                <div class="rounded-[28px] overflow-hidden border-[4px] border-white">
+                    <img src="3082_20260625155100.png" alt="Payment QR" class="w-full h-auto">
+                </div>
+            </div>
+
+            <div class="p-4 pt-6 space-y-5">
+                <div class="text-center">
+                    <p class="font-bold text-gray-700">ชื่อบัญชี: มุขตาภา นิยม</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="virtual-card bg-[#B5DAFF] rounded-[24px] p-5 shadow-lg cursor-pointer" onclick="copyText('1521373489', this)">
+                        <div class="flex justify-between items-center text-white">
+                            <span class="font-bold">กสิกรไทย</span>
+                            <span class="text-xs bg-white/30 px-3 py-1 rounded-full">คัดลอก</span>
+                        </div>
+                        <div class="text-white font-bold text-2xl mt-2 tracking-widest">1521373489</div>
+                    </div>
+
+                    <div class="virtual-card bg-[#D6E283] rounded-[24px] p-5 shadow-lg cursor-pointer" onclick="copyText('0822571488', this)">
+                        <div class="flex justify-between items-center text-white">
+                            <span class="font-bold">TrueMoney Wallet</span>
+                            <span class="text-xs bg-white/30 px-3 py-1 rounded-full">คัดลอก</span>
+                        </div>
+                        <div class="text-white font-bold text-2xl mt-2 tracking-widest">0822571488</div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-3 text-[11px] text-red-600 font-bold">
+                            ⚠ โอนผิด โอนใหม่<br>ไม่โอนคืนงับ
+                        </div>
+                        <div class="bg-orange-50 border-2 border-orange-200 rounded-2xl p-3 text-[11px] text-orange-600 font-bold">
+                            ✅ โอน Wallet<br>ไม่บวกเพิ่มคับ!
+                        </div>
+                    </div>
+                    
+                    <div class="bg-pink-50 border border-pink-100 rounded-2xl p-3 text-[12px] text-gray-600">
+                        * รบกวนเช็คชื่อและเลขบัญชีให้ดีก่อนโอน และเเจ้งสลิปด้วยนะคะ
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyText(text, el) {
+            navigator.clipboard.writeText(text);
+            const toast = document.getElementById('toast');
+            toast.classList.replace('opacity-0', 'opacity-100');
+            setTimeout(() => toast.classList.replace('opacity-100', 'opacity-0'), 2000);
+        }
+    </script>
+</body>
+</html>
